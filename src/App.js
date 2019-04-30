@@ -27,7 +27,7 @@ class App extends React.Component {
           cards:[],
           score:0},
         {playerNum: 2,
-          playing:false,
+          playing:true,
           cards:[],
           score:0},
         {playerNum: 3,
@@ -50,7 +50,11 @@ class App extends React.Component {
           {this.state.players.map((player) => (
             
             player.playing  ?
-            <Player key={player.playerNum} score={player.score} hit={this._hit} playerNum={player.playerNum}/>
+            <Player key={player.playerNum} score={player.score} 
+            hit={this._hit} 
+            playerNum={player.playerNum}
+            player={player}
+            />
             : null
           ))}
 
