@@ -10,6 +10,7 @@
 
 .App-header {
   background-color: #282c34;
+  background-color: #355e3b;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -33,5 +34,12 @@
 }
 
 .playingcard {
-  width:5%;
+  width:20%;
+}
+.dealercard {
+  width:10%;
+}
+.playersgrid {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%
 }

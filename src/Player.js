@@ -12,9 +12,9 @@ class Player extends Component {
             
         }}>HitMe</button>
         <button>Stay</button>
-
-        {this.props.player.cards.map((card) => 
-          <img className="playingcard" src={`./img/${card}.png`} />
+        <br />
+        {this.props.player.cards.map((card,i) => 
+          <img key={i} className="playingcard" src={`./img/${card}.png`} />
           )}
       </div>
     )
