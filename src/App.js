@@ -2,25 +2,33 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state={
+      carddeck:{"AH":11,"KH":10,"QH":10,"JH":10,"10H":10,"9H":9,"8H":8,"7H":7,"6H":6,"5H":5,"4H":4,"3H":3,"2H":2, 
+      "AD":11,"KD":10,"QD":10,"JD":10,"10D":10,"9D":9,"8D":8,"7D":7,"6D":6,"5D":5,"4D":4,"3D":3,"2D":2,
+      "AS":11,"KS":10,"QS":10,"JS":10,"10S":10,"9S":9,"8S":8,"7S":7,"6S":6,"5S":5,"4S":4,"3S":3,"2S":2,
+      "AC":11,"KC":10,"QC":10,"JC":10,"10C":10,"9C":9,"8C":8,"7C":7,"6C":6,"5C":5,"4C":4,"3C":3,"2C":2
+      }
+      arrayCardsLeft:["AH","KH","QH","JH","10H","9H","8H","7H","6H","5H","4H","3H","2H",
+      "AD","KD","QD","JD","10D","9D","8D","7D","6D","5D","4D","3D","2D",
+      "AS","KS","QS","JS","10S","9S","8S","7S","6S","5S","4S","3S","2S",
+      "AC","KC","QC","JC","10C","9C","8C","7C","6C","5C","4C","3C","2C"]
+    }
+  }
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          
+
+
+        </header>
+      </div>
+    );
+  }
+
 }
 
 export default App;
