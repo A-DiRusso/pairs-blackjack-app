@@ -5,8 +5,10 @@ class Player extends Component {
     return (
       <div>
         <h3>Hello, I'm the player.</h3>
+        <h3>score: {this.props.score}</h3>
         <button onClick={() => {
               this.props.hit(this.props.playerNum)
+            
         }}>HitMe</button>
         <button>Stay</button>
       </div>

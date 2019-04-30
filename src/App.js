@@ -50,7 +50,7 @@ class App extends React.Component {
           {this.state.players.map((player) => (
             
             player.playing  ?
-            <Player key={player.playerNum} hit={this._hit} playerNum={player.playerNum}/>
+            <Player key={player.playerNum} score={player.score} hit={this._hit} playerNum={player.playerNum}/>
             : null
           ))}
 
@@ -69,9 +69,17 @@ class App extends React.Component {
 
     //add to player cards[]
    let tempPlayers = this.state.players
+  //  console.log(tempPlayers);
     tempPlayers[playerNum].cards=[...tempPlayers[playerNum].cards.concat(newcard)]
 
-    //update setState
+    //update the score with each card:
+    let newScore = 0;
+   tempPlayers[playerNum].cards.forEach((card) => {
+    newScore  += this.state.carddeck[card]
+   })
+   tempPlayers[playerNum].score = newScore
+   
+   //update setState
     this.setState({
       arrayCardsLeft:tempArray,
       players:tempPlayers
