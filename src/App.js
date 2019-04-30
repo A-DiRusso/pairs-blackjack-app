@@ -100,7 +100,7 @@ this._dealerhit();
   //  tempPlayers[playerNum].cards.forEach((card) => {
   //   newScore  += this.state.carddeck[card]
   //  })
-   tempPlayers[playerNum].score = score(tempPlayers[playerNum].cards)
+   tempPlayers[playerNum].score = scores2(tempPlayers[playerNum].cards)
    
    //update setState
     this.setState({
@@ -127,7 +127,7 @@ _dealerhit = () => {
 //  tempDealer.cards.forEach((card) => {
 //   newScore  += this.state.carddeck[card]
 //  })
- tempDealer.score = score(tempDealer.cards) //call this._score
+ tempDealer.score = scores2(tempDealer.cards) //call this._score
  
  //update setState
   this.setState({
@@ -153,5 +153,45 @@ function score(cards) {
   })
   return newScore;
 
+
 }
+
+// let tempcards = ["AH", "AC", "AH", "4D"]
+function scores2(cards) {
+  let newScore = 0;
+  let scoreArray = [0]
+  cards.forEach((card) => {
+    let scoreArray2 = []
+    if (carddeck[card] !== 11) {
+      scoreArray.forEach((score,i) => {
+        // scoreArray[i] += carddeck[card]
+        scoreArray2.push(scoreArray[i]+carddeck[card])
+        // console.log(scoreArray2);
+      })
+    }
+    else {
+      let j = scoreArray.length
+      for (let i = 0; i< j; i++) {
+        scoreArray2.push(scoreArray[i] + 11)
+        scoreArray2.push(scoreArray[i] + 1)
+      }
+    }
+      console.log(scoreArray2);
+      scoreArray = scoreArray2;
+
+})
+if (Math.min(...scoreArray) > 21 ) {
+  return Math.min(...scoreArray)
+}
+else {
+  let newscoreArray = scoreArray.filter(score => score <= 21);
+  return Math.max(...newscoreArray);
+
+}
+
+
+}
+
+// console.log(scores2(tempcards));
+
 export default App;
